@@ -338,3 +338,6 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+/src/AntDesign.Boilerplate.Client/wwwroot/css/site.css
+/src/AntDesign.Boilerplate.Server/app.db
+/package-lock.json

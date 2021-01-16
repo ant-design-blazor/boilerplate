@@ -1,0 +1,20 @@
+[
+  {
+    "path": "/account",
+    "name": "个人页",
+    "key": "account",
+    "icon": "user",
+    "children": [
+      {
+        "path": "/account/center",
+        "name": "个人中心",
+        "key": "account.center"
+      },
+      {
+        "path": "/account/settings",
+        "name": "个人设置",
+        "key": "account.settings"
+      }
+    ]
+  }
+]

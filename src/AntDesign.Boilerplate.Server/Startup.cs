@@ -7,6 +7,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using AntDesign.Boilerplate.Server.Data;
 using AntDesign.Boilerplate.Server.Models;
+using Microsoft.AspNetCore.Identity;
+using AntDesign.Boilerplate.Shared;
+using AntDesign.Boilerplate.Server.Identity;
 
 namespace AntDesign.Boilerplate.Server
 {
@@ -29,14 +32,24 @@ namespace AntDesign.Boilerplate.Server
 
             services.AddDatabaseDeveloperPageExceptionFilter();
 
-            services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddDefaultIdentity<ApplicationUser>()
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<ApplicationDbContext>()
+                .AddDefaultTokenProviders();
 
             services.AddIdentityServer()
-                .AddApiAuthorization<ApplicationUser, ApplicationDbContext>();
+                .AddApiAuthorization<ApplicationUser, ApplicationDbContext>()
+                .AddTestUsers(TestUsers.Users)
+                .AddInMemoryClients(Config.Clients)
+                .AddInMemoryApiScopes(Config.ApiScopes)
+                .AddInMemoryIdentityResources(Config.IdentityResources)
+                .AddInMemoryApiResources(Config.ApiResources)
+                ;
 
             services.AddAuthentication()
                 .AddIdentityServerJwt();
+
+            services.AddScoped<IIdentityContext, IdentityContext>();
 
             services.AddControllersWithViews();
             services.AddRazorPages();

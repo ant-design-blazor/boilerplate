@@ -2,10 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>AntDesign.Boilerplate.Client</RootNamespace>
+    <AssemblyName>AntDesign.Boilerplate.Client</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AntDesign" Version="0.6.0-*" />
+    <PackageReference Include="AntDesign" Version="0.8.4" />
     <PackageReference Include="AntDesign.Charts" Version="0.2.0-*" />
     <PackageReference Include="AntDesign.Pro.Layout" Version="0.1.0-*" />
     <PackageReference Include="IdentityModel" Version="5.0.0" />
@@ -18,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AntDesign.Boilerplate.Shared\AntDesign.Boilerplate.Shared.csproj" />
+    <ProjectReference Include="..\Shared\Shared.csproj" />
   </ItemGroup>
 
   <PropertyGroup Condition=" '$(SolutionDir)'==''">

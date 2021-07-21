@@ -4,6 +4,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <UserSecretsId>AntDesign.Boilerplate.Server-E3A3814B-CCFF-4A49-8235-E0B3FB5FDAD2</UserSecretsId>
     <RootNamespace>AntDesign.Boilerplate.Server</RootNamespace>
+    <AssemblyName>AntDesign.Boilerplate.Server</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,12 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\AntDesign.Boilerplate.Client\AntDesign.Boilerplate.Client.csproj" />
-    <ProjectReference Include="..\AntDesign.Boilerplate.Shared\AntDesign.Boilerplate.Shared.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+    <ProjectReference Include="..\Client\Client.csproj" />
+    <ProjectReference Include="..\Shared\Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>

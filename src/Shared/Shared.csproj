@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>AntDesign.Boilerplate.Shared</RootNamespace>
+    <AssemblyName>AntDesign.Boilerplate.Shared</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
